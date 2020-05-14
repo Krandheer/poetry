@@ -1,0 +1,128 @@
+{% extends 'blog/index.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="section" id="home" style="min-height: 100vh;">
+	
+	<div class="container">
+		<div class="columns is-centered">
+			
+			<div class="column">
+				
+				<figure style="text-align: center">
+					<img style="max-width: 40%; border-radius: 20%" src={% static "images/logo.png" %}>
+				</figure>
+				<figcaption style="text-align: center;color:#282828; font-size: 18px;">एक संगम- &nbsp मेरी 	भावनाओं, अनुभवों और विचारों का
+				</figcaption>
+	
+			</div>
+
+			<div class="column" style="text-align: center;">
+				<p style="font-size: 20px; color: black">
+					मैं अनभिज्ञ हूँ,<br>
+					हर वाद से प्रतिवाद से,<br>
+					प्रेम की हर बात से।<br>
+					विरह की एक संवाद से,<br>
+					मैं अनभिज्ञ हूँ।।<br>
+					है ये मेरी बस कल्पना,<br>
+					शब्द जो भी लिख रहा।<br>
+					है भला क्या प्रेम ये,<br>
+					मुझको न दिख रहा।।<br>
+					तेरा संग होना है जरूरी,<br>
+					की रच सकूँ एक काव्य मैं।।<br>
+					ना कर सका कंठस्थ इतना,<br>
+					की लिख सकूँ सिर्फ याद से।।<br>
+					मैं अनभिज्ञ हूँ,<br>
+					हर वाद से प्रतिवाद से,<br>
+					प्रेम की हर बात से।।<br>
+				</p>
+			</div>
+		
+		</div>
+	</div>
+  
+</section>
+
+<section class="section" id="about" style="background-color: rgb(244,248,252); min-height: 100vh;">
+	<div class="container">
+		<h1 class="title is-3" style="text-align: center; text-decoration-line: underline;">परिचय</h1>
+		<div class="columns is-centered">
+
+
+			<div class="column" style="text-align: center;">
+				<figure>
+					<img style="max-width: 50%; border-radius: 40%; box-shadow:  4px -4px 8px;" src={% static "images/bhasker.jpg" %}>
+					<figcaption>Bhaskar Pandey</figcaption>
+				</figure>
+			</div>
+
+			<div class="column" style="text-align: center;">
+				<div><h1 class="title is-2" style="color:#143D59;">bhashadiaries</h1>
+				</div>
+				<br>
+				<p style="font-size: 20px;"><!-- <span class="title is-4">Bhasha: </span> -->एक संगम, मेरी भावनाओं, अनुभवों और विचारों का ।</p>
+				<br>
+				<p style="font-size: 20px;">यह पेज मेरी भावनाओं, अनुभवों और विचारों को शब्दों मे गढकर<br> आपके समक्ष रखने की एक कोशिश है।<br>
+					आशा करता हूँ इन भावों को आप तक पहुंचाने में सफल रहूँगा ।<br> 
+					भूल होना प्रकृति है, अतः मुझमें सुधार लाने हेतु आपके सुझाओं का स्वागत है,<br>
+					आपके अमूल्य विचार और  सुझाओं के लिए मैं आपका आभारी रहूँगा ।
+				</p>
+			</div>
+
+
+		</div>
+
+	</div>
+
+</section>
+
+<section class="section" id="recent-articles" style="background-color: rgb(244,248,252);">
+	<h1 class="title is-3" style="text-align: center;">Recent Poems</h1>
+	<div class="columns">
+		{%for post in posts%}
+			<div class="column is-one-third" style="text-align: center;">
+			
+				<div class="card box box-shadow-lift" style="height: 100%;display: flex;
+  flex-direction: column;">
+  					<style >
+						.card:hover{
+							box-shadow: 1px 8px 20px grey;
+						}
+  					</style>
+						{%if post.image%}
+		  					<div class="card-image">
+      							
+    							<figure class="image is-4by3">
+      								<img src="{{ post.image.url}}" alt="{{ post.title }}">
+    							</figure>
+      				
+      						</div>
+      					{%endif%}
+	  		
+	  				<div class="card-content">
+
+		        		<p class="title is-3" style="">{{post.title}}</p>
+		        		<p class="subtitle" style="font-size: 15px;">{{post.created_on}}</p>
+		        		<p>{{post.content|safe|slice:":200"}}</p>
+		        		
+		        		<a href={% url 'blog:post_detail' post.slug %}> continue reading...</a>
+		      
+	      			</div>
+	      			<footer class="card-footer" style="margin-top: auto">
+    					<p class="card-footer-item">
+      						<span>Share on <a href="https://twitter.com/codinghorror/status/506010907021828096">Whatsapp</a></span>
+      					</p>
+    					<p class="card-footer-item">
+      						<span> Share on <a href="#">Facebook</a></span></p>
+  					</footer>
+
+	  			</div>
+			</div>
+
+		{% endfor %}
+	</div>
+	
+</section>
+
+{% endblock %}

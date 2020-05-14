@@ -1,0 +1,11 @@
+{% extends "blog/index.html" %}
+
+{% block content %}
+
+<section class="section" style="min-height: 100vh; text-align: center;">
+	<form action="{% url 'newsletter:subscribe' %}" method="post">{% csrf_token %}
+		{{ form.as_p }}
+	<button type="submit">Submit</button>
+</form>
+</section>
+{% endblock %}

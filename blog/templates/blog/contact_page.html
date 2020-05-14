@@ -1,0 +1,38 @@
+{% extends 'blog/index.html' %}
+	
+{% block content %}
+
+	<section class="section" style="text-align: center;">
+		<div class="conainer">
+			<form method="POST" style="padding:12px">{% csrf_token %}
+			<p class="title is-4">mail me <a href="mailto:bhaskarpandey003@gmail.com">here</a></p>
+			<p>or write to me below</p>
+			<div class="control" style="text-align: center;">
+				{%for field in form%}
+					<div class="label">{{field.label_tag}}</div>
+					{{field}}
+				{%endfor%}
+			</div>
+
+			<!-- {{ form.as_p }} -->
+
+			<div class="control" style="text-align: center;">
+    			<button class="button is-primary">Submit</button>
+  			</div>
+		</form>
+		</div>
+	</section> 
+
+
+{% endblock %}
+
+  <!-- <form method="POST" style="padding:12px">{% csrf_token %}
+			<h4 style="text-align: center;">Contact me here</h4>
+				{{ form.as_p }}
+			<button type="submit">send</button>
+		</form> -->
+
+	
+
+
+<!-- is-link -->

@@ -1,0 +1,54 @@
+{% extends 'blog/index.html' %}
+	
+
+<!-- this will list some limited post on homepage -->
+	{% block content %}
+		<section class="section" style="background-color: rgb(244,248,252); min-height: 100vh;">
+			<h1 class="title is-3" style="text-align: center; color:#3498DB;">Collection of my poems</h1>
+			<div class="columns is-multiline">
+			{% for post in posts %}
+				<div class="column is-one-third" style="text-align: center;">
+				
+					<div class="card box box-shadow-lift" style="height: 100%;display: flex;
+  flex-direction: column;">
+  						<style >
+  							.card:hover{
+  								box-shadow: 1px 8px 20px grey;
+  							}
+  						</style>
+
+						{%if post.image%}
+		  					<div class="card-image">
+      							
+    							<figure class="image is-4by3">
+      								<img src="{{ post.image.url}}" alt="{{ post.title }}">
+    							</figure>
+      				
+      						</div>
+      					{%endif%}
+		  		
+		  				<div class="card-content">
+
+		  					<p class="title is-3" style=""><a href="{% url 'blog:post_detail' post.slug %}">{{post.title}}</a></p> 
+
+			        		<p class="subtitle" style="font-size: 15px;">{{post.created_on}}</p>
+			        		<p>{{post.content|safe|slice:":200"}}</p>
+			        		<p style="margin-top:2rem"><a href="{%url 'blog:post_detail' post.slug %}">continue reading...</a></p> 
+
+			        		<!-- <p>let user viewe number of comments here</p> -->
+			      
+		      			</div>
+		      			<footer class="card-footer" style="margin-top: auto">
+	    					<p class="card-footer-item">
+	      						<span>Share on <a href="https://twitter.com/codinghorror/status/506010907021828096">Whatsapp</a></span>
+	      					</p>
+	    					<p class="card-footer-item">
+	      						<span> Share on <a href="#">Facebook</a></span></p>
+	  					</footer>
+
+		  			</div>
+				</div>
+			{% endfor %}
+		</div>
+		</section>
+	{% endblock content %}

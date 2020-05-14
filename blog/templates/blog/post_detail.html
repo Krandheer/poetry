@@ -1,0 +1,41 @@
+{%extends 'blog/index.html' %}
+
+{% block content %}
+	
+	<section class="section" style="background-color: rgb(244,248,252); text-align: center; min-height: 100vh;">
+		<article class="article">
+			<p class="title is-3">{{posts.title}}</p>
+			<p class="subtitle is-6">{{posts.created_on}}</p>
+			<p>{{posts.content}} </p>
+		</article>
+
+		<hr>
+		<h3 class="title is-3">Leave a comment:</h3>
+		<form action="{% url 'blog:post_detail' posts.slug %}" method="post">{% csrf_token %}
+
+			<div class="control" style="text-align: center;">
+				{% for field in form %}
+					<label class="label">{{field.label_tag}}</label>
+					{{field}}
+				{% endfor %}
+			</div>
+	        <!-- {{ form.as_p }} -->
+	        <div class="control" style="text-align: center;">
+    			<button class="button is-primary">Submit</button>
+  			</div>
+    		<!-- <button class="button is-link" style="background-color: #00d1b2">Submit</button> -->
+ 
+    	</form>
+    	<h3 class="title is-3">Comments:</h3>
+	    {% for comment in comments %}
+		    <p>
+		        On {{comment.created_on }}&nbsp;
+		        <b>{{ comment.name }}</b> wrote:
+		    </p>
+		    <p>{{ comment.body }}</p>
+		    <br>
+	    {% endfor %}
+
+
+	</section>
+{% endblock %}
