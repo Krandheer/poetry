@@ -12,9 +12,9 @@ def home(request):
 	return render(request=request,
 				template_name='blog/home.html',
 				context= {'posts': posts})
-	#I can get the model of story and thought here
-	#and iterate throught them on home.html to show
-	#them in home page.
+	#I can use model from different aap here
+	#and use them in home.html template
+	#to show the home page list from different model
 
 def post_list(request):
 	posts = Post.objects.filter(status=1).order_by('-created_on')

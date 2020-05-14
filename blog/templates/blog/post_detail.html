@@ -6,6 +6,11 @@
 		<article class="article">
 			<p class="title is-3">{{posts.title}}</p>
 			<p class="subtitle is-6">{{posts.created_on}}</p>
+			{%if posts.image%}
+			<figure class="image is-6by3">
+      			<img src="{{ posts.image.url}}" alt="{{ post.title }}">
+    		</figure>
+    		{%endif%}
 			<p>{{posts.content}} </p>
 		</article>
 
