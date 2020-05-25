@@ -10,7 +10,7 @@ SECRET_KEY = '_&zh6e2j!)aq$)zbu6rdlz5a&z_onxp_@w$7j)tzd+kp4t@!v9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://bhashadiaries.pythonanywhere.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'bhashadiaries.pythonanywhere.com']
 
 
 # Application definition

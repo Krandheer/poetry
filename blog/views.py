@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from . models import Post, Comment
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
-from .forms import ContactForm, CommentForm
+from .forms import CommentForm
 from django.db.models import Q
 
 
@@ -32,6 +32,7 @@ def post_detail(request, slug):
 				post = posts
 				)
 			comment.save()
+			form = CommentForm()
 	else:
 		form = CommentForm() 
 
@@ -46,11 +47,7 @@ def post_detail(request, slug):
 
 #backend for receiving detail is yet to be set
 def contact_page(request):
-	form = ContactForm(request.POST or None)
-	context = { "form": form}
-	if form.is_valid():
-		print(form.cleaned_data)
-		form=ContactForm()
+	context = {}
 	return render(request, "blog/contact_page.html", context)
 
 

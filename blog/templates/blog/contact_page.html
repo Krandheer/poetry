@@ -2,24 +2,25 @@
 	
 {% block content %}
 
-	<section class="section" style="text-align: center;">
-		<div class="conainer">
-			<form method="POST" style="padding:12px">{% csrf_token %}
-			<p class="title is-4">mail me <a href="mailto:bhaskarpandey003@gmail.com">here</a></p>
-			<p>or write to me below</p>
-			<div class="control" style="text-align: center;">
-				{%for field in form%}
-					<div class="label">{{field.label_tag}}</div>
-					{{field}}
-				{%endfor%}
-			</div>
-
-			<!-- {{ form.as_p }} -->
-
-			<div class="control" style="text-align: center;">
-    			<button class="button is-primary">Submit</button>
-  			</div>
-		</form>
+	<section class="section" style="text-align: center; height: auto; min-height: 100vh;">
+		<div class="conainer" style="margin-top: 30px;">
+			<p style="font-size: 24px;">Hi, I will be happy to connet to you:</p>
+			<br>
+			<hr style="border:1px solid black; width: 50%; margin:auto;">
+			<br>
+			<p style="font-family:helvetica; font-size: 24px;">Please write a mail to me <a href="mailto:bhaskarpandey003@gmail.com">here</a></p>
+			<br>
+			<hr style="border:1px solid black; width: 50%; margin:auto;">
+			<p style="font-size: 24px"> Or </p>
+			<hr style="border:1px solid black; width: 50%; margin:auto;">
+			<br>
+			<p style="font-family: arial; font-size: 24px;">Connect to me through my fb page using messanger <br> or whatsapp option
+				<a href="https://www.facebook.com/bhaskarpandey806/">
+					here
+				</a>
+			</p>
+			<br>
+			<hr style="border:1px solid black; width: 50%; margin:auto;">
 		</div>
 	</section> 
 

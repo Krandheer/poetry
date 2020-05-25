@@ -17,6 +17,7 @@ def story_detail(request,slug):
 				body=form.cleaned_data['body'],
 				post=posts)
 			comment.save()
+			form = CommentForm()
 	else:
 		form=CommentForm()
 
