@@ -46,7 +46,7 @@
 
 	      					<!-- fb sharing added on 24/5 at 10 pm if it is working or not will be checked after deployment -->
 	    					<p class="card-footer-item">
-	      						<span> Share on <a href="https://www.facebook.com/sharer/sharer.php?u={{post.slug}}">Facebook</a></span></p>
+	      						<span> Share on <a href="https://www.facebook.com/sharer/sharer.php?href={% url 'blog:post_detail' post.slug %}">Facebook</a></span></p>
 	  					</footer>
 
 		  			</div>
