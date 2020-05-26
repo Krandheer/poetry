@@ -15,7 +15,7 @@
 				<p>{{posts.content|safe}} </p>
 			</article>
 
-			<hr style="border: 1px solid black; margin:60px 0 40px 0">
+			<hr style="border: 1px solid black; margin:60px 0 30px 0">
 			
 			<h3 class="title is-4">Leave a comment:</h3>
 			<form action="{% url 'blog:post_detail' posts.slug %}" method="post">{% csrf_token %}
