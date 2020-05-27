@@ -4,14 +4,18 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
 from .forms import CommentForm
 from django.db.models import Q
-
-
+from story.models import Story
+from thoughts.models import Thoughts
 
 def home(request):
 	posts = Post.objects.filter(status=1).order_by('-created_on')[:3]
+	story = Story.objects.filter(status=1).order_by('-created_on')[:3]
+	thoughts = Thoughts.objects.filter(status=1).order_by('-created_on')[:3]
 	return render(request=request,
 				template_name='blog/home.html',
-				context= {'posts': posts})
+				context= {'posts': posts,
+							'stories': story,
+							'thoughts': thoughts})
 	#I can use model from different aap here
 	#and use them in home.html template
 	#to show the home page list from different model

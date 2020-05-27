@@ -110,12 +110,14 @@
 		        		<a href={% url 'blog:post_detail' post.slug %}> continue reading...</a>
 		      
 	      			</div>
+
 	      			<footer class="card-footer" style="margin-top: auto">
     					<p class="card-footer-item">
-      						<span>Share on <a href="https://twitter.com/codinghorror/status/506010907021828096">Whatsapp</a></span>
-      					</p>
-    					<p class="card-footer-item">
-      						<span> Share on <a href="#">Facebook</a></span></p>
+	      					<span>Share on <a href="whatsapp://send?text=http://127.0.0.1:8000/thoughtsdetail/{{post.slug}}/">Whatsapp</a></span>
+	      				</p>
+	    				<p class="card-footer-item">
+	      					<span> Share on <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/thoughtsdetail/{{posts.slug}}/" target="_blank">Facebook</a></span>
+	      				</p>
   					</footer>
 
 	  			</div>
@@ -123,6 +125,108 @@
 
 		{% endfor %}
 	</div>
+
+	{%if stories%}
+		<h1 class="title is-3" style="text-align: center;">Recent Story</h1>
+		<div class="columns">
+			{%for story in stories%}
+				<div class="column is-one-third" style="text-align: center;">
+		
+					<div class="card box box-shadow-lift" style="height: 100%;display: flex;
+							flex-direction: column;">
+							<style >
+							.card:hover{
+								box-shadow: 1px 8px 20px grey;
+							}
+							</style>
+						{%if post.image%}
+		  					<div class="card-image">
+      							
+    							<figure class="image is-4by3">
+      								<img src="{{ story.image.url}}" alt="{{ post.title }}">
+    							</figure>
+      				
+      						</div>
+      					{%endif%}
+  		
+	  					<div class="card-content">
+
+			        		<p class="title is-3" style="">{{story.title}}</p>
+			        		<p class="subtitle" style="font-size: 15px;">{{story.created_on}}</p>
+			        		<p>{{story.content|safe|slice:":200"}}</p>
+			        		
+			        		<a href={% url 'story:story_detail' story.slug %}> continue reading...</a>
+		      
+		      			</div>
+
+	      				<footer class="card-footer" style="margin-top: auto">
+	    					
+	    					<p class="card-footer-item">
+	      						<span>Share on <a href="whatsapp://send?text=http://127.0.0.1:8000/thoughtsdetail/{{post.slug}}/">Whatsapp</a></span>
+	      					</p>
+	    					<p class="card-footer-item">
+	      						<span> Share on <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/thoughtsdetail/{{posts.slug}}/" target="_blank">Facebook</a></span>
+	      					</p>
+
+  						</footer>
+
+  					</div>
+				</div>
+
+			{% endfor %}
+		</div>
+	{%endif%}
+
+
+	{%if thoughts%}
+		<h1 class="title is-3" style="text-align: center;">Recent Musings</h1>
+		<div class="columns">
+			{%for thought in thoughts%}
+				<div class="column is-one-third" style="text-align: center;">
+		
+					<div class="card box box-shadow-lift" style="height: 100%;display: flex;
+							flex-direction: column;">
+							<style >
+							.card:hover{
+								box-shadow: 1px 8px 20px grey;
+							}
+							</style>
+						{%if thought.image%}
+		  					<div class="card-image">
+      							
+    							<figure class="image is-4by3">
+      								<img src="{{ thought.image.url}}" alt="{{ post.title }}">
+    							</figure>
+      				
+      						</div>
+      					{%endif%}
+  		
+	  					<div class="card-content">
+
+			        		<p class="title is-3" style="">{{thought.title}}</p>
+			        		<p class="subtitle" style="font-size: 15px;">{{thought.created_on}}</p>
+			        		<p>{{thought.content|safe|slice:":200"}}</p>
+			        		
+			        		<a href={% url 'thoughts:thoughts_detail' thought.slug %}> continue reading...</a>
+		      
+		      			</div>
+
+	      				<footer class="card-footer" style="margin-top: auto">
+	    					<p class="card-footer-item">
+	      						<span>Share on <a href="whatsapp://send?text=http://127.0.0.1:8000/thoughtsdetail/{{post.slug}}/">Whatsapp</a></span>
+	      					</p>
+	    					<p class="card-footer-item">
+	      						<span> Share on <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/thoughtsdetail/{{posts.slug}}/" target="_blank">Facebook</a></span>
+	      					</p>
+  						</footer>
+
+  					</div>
+				</div>
+
+			{% endfor %}
+		</div>
+	{%endif%}
+
 	
 </section>
 

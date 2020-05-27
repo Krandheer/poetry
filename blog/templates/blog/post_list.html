@@ -41,12 +41,11 @@
 		      			</div>
 		      			<footer class="card-footer" style="margin-top: auto">
 	    					<p class="card-footer-item">
-	      						<span>Share on <a href="">Whatsapp</a></span>
+	      						<span>Share on <a href="whatsapp://send?text=http://127.0.0.1:8000/blog/{{post.slug}}/">Whatsapp</a></span>
 	      					</p>
-
-	      					<!-- fb sharing added on 24/5 at 10 pm if it is working or not will be checked after deployment -->
 	    					<p class="card-footer-item">
-	      						<span> Share on <a href="https://www.facebook.com/sharer/sharer.php?href={%url 'blog:post_detail' post.slug %}">Facebook</a></span></p>
+	      						<span> Share on <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/blog/{{post.slug}}/" target="_blank">Facebook</a></span>
+	      					</p>
 	  					</footer>
 
 		  			</div>
