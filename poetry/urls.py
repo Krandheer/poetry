@@ -10,4 +10,5 @@ urlpatterns = [
     path('thoughts', include('thoughts.urls')),
     path('newsletter/', include('newsletter.urls')),
     path('tinymce/', include('tinymce.urls')),
+    path('videos/', include('videos.urls'))
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

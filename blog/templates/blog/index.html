@@ -14,7 +14,7 @@
       <!-- fb comment integration javascript sdk -->
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
       
-  	</head>
+  </head>
 
 
 	<body class="has-navbar-fixed-top">
@@ -54,7 +54,7 @@
 		      	<a class="navbar-item" id="navbar-inline" href="{% url 'blog:post_list' %}">Poem</a>
 		      	<a class="navbar-item" id="navbar-inline" href="{% url 'thoughts:thoughts_list' %}">Thoughts</a>
 		      	<a class="navbar-item" id="navbar-inline" href="{% url 'story:story_list' %}">Story</a>
-		      	<a class="navbar-item" id="navbar-inline">Videos</a>
+		      	<a class="navbar-item" id="navbar-inline" href="{% url 'videos:video_list' %}">Videos</a>
 		      	<a class="navbar-item" id="navbar-inline" href="http://bhashadiaries.pythonanywhere.com/#about">About</a>
 		      	<a class="navbar-item" id="navbar-inline" href="{% url 'blog:contact_page' %}">Contact</a>
           <style>

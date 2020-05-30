@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'newsletter',
     'story',
     'thoughts',
+    'videos',
     'tinymce',
 ]
 
