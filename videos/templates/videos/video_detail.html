@@ -1,0 +1,47 @@
+{%extends 'blog/index.html' %}
+
+{% block content %}
+	
+	<section class="section" style="background-color: rgb(244,248,252); text-align: center; min-height: 100vh;">
+		
+		<div class="container">
+			
+			<article class="article">
+				<p class="title is-3">{{posts.title}}</p>
+				<p class="subtitle is-6">{{posts.created_on}}</p>
+				{%if posts.video %}
+					<video width="500" controls>
+					  <source src="{{ posts.video.url}}" type="video/mp4">
+					</video>
+	    		{%endif%}
+				<p>{{posts.video_description|safe}} </p>
+			</article>
+
+			<!-- sharing on social media starts here -->
+			<p style="margin-top: 50px"><span style="font-style: bold; font-size: 24px"> Share On:</span>
+				<!-- whatsapp sharing code starts here -->
+				<a href="whatsapp://send?text=https://bhashadiaries.pythonanywhere.com/story/detail/{{posts.slug}}/">
+					<i class="fab fa-whatsapp-square fa-2x"></i>
+				</a>
+				<!-- whatsapp sharing code ends here -->
+
+				<a href="https://www.facebook.com/sharer/sharer.php?u=https://bhashadiaries.pythonanywhere.com/story/detail/{{posts.slug}}/" target="_blank">
+ 					<i class="fab fa-facebook fa-2x"></i>
+				</a>
+
+				<a href="https://twitter.com/intent/tweet?text=https://bhashadiaries.pythonanywhere.com/story/detail/{{posts.slug}}/" target="_blank">
+ 					<i class="fab fa-twitter-square fa-2x"></i>
+				</a>
+			</p>
+			<!-- sharing on social media code ends here -->
+
+			<hr style="border: 1px solid black; margin:60px 0 30px 0">
+			
+			<h3 class="title is-4">Leave a comment:</h3>
+
+		<!-- fb comment integrations -->
+			<div class="fb-comments" data-href="https://bhashadiaries.pythonanywhere.com/story/detail/{{posts.slug}}/" data-numposts="5" data-width=""></div>
+
+		</div>
+	</section>
+{% endblock %}
