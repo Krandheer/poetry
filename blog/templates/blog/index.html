@@ -10,16 +10,15 @@
 	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
 	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-
-      <!-- fb comment integration javascript sdk -->
-      <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0">
-      </script>
       
   </head>
 
 
 	<body class="has-navbar-fixed-top">
+    <!-- fb comment integration javascript sdk -->
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0">
+      </script>
   	<nav class="navbar is-grey is-fixed-top" role="navigation" aria-label="main navigation">
   		<div class="navbar-brand">
     		<a class="navbar-item" id="brand" href="{% url 'blog:home' %}" style="font-size: 40px; font-weight: bold"><span id="b">bhasha</span><span id="d">diaries<span></a>
