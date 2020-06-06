@@ -38,7 +38,6 @@ TINYMCE_DEFAULT_CONFIG = {
     'custom_undo_redo_levels': 20,
     'selector': 'textarea'
     'theme': 'modern',
-    'plugins': "powerpaste"
     # 'language': 'hi_IN',  
     'plugins': '''
             textcolor save link image media preview codesample contextmenu
