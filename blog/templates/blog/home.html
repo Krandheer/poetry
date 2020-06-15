@@ -105,7 +105,8 @@
 
 		        		<p class="title" style="">{{post.title}}</p>
 		        		<p class="subtitle" style="font-size: 15px;">{{post.created_on}}</p>
-		        		<!-- <p>{{post.content|safe|slice:":200"}}</p> -->
+		        		
+		        		<p>{{post.content|striptags|truncatewords:25}}</p>
 		        		
 		        		<a href={% url 'blog:post_detail' post.slug %}> continue reading...</a>
 		      
@@ -157,7 +158,7 @@
 
 				        		<p class="title" style="">{{thought.title}}</p>
 				        		<p class="subtitle" style="font-size: 15px;">{{thought.created_on}}</p>
-				        		<!-- <p>{{thought.content|safe|slice:":200"}}</p> -->
+				        		<p>{{post.content|striptags|truncatewords:25}}</p>
 				        		
 				        		<a href={% url 'thoughts:thoughts_detail' thought.slug %}> continue reading...</a>
 			      
@@ -210,7 +211,7 @@
 
 			        		<p class="title" style="">{{story.title}}</p>
 			        		<p class="subtitle" style="font-size: 15px;">{{story.created_on}}</p>
-			        		<!-- <p>{{story.content|safe|slice:":200"}}</p> -->
+			        		<p>{{post.content|striptags|truncatewords:25}}</p>
 			        		
 			        		<a href={% url 'story:story_detail' story.slug %}> continue reading...</a>
 		      
