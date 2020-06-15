@@ -79,8 +79,9 @@
 </section>
 
 <section class="section" id="recent-articles" style="background-color: rgb(244,248,252);">
-	<h1 class="title is-3" style="text-align: center;">Recent Poems</h1>
-	<div class="columns">
+	<div class="container">
+		<h1 class="title is-3" style="text-align: center;">Recent Poems</h1>
+		<div class="columns">
 		{%for post in posts%}
 			<div class="column is-one-third" style="text-align: center;">
 			
@@ -128,9 +129,9 @@
 			</div>
 
 		{% endfor %}
-	</div>
+		</div>
 
-	{%if thoughts%}
+		{%if thoughts%}
 		<h1 class="title is-3" style="text-align: center;">Recent Musings</h1>
 		<div class="columns">
 			{%for thought in thoughts%}
@@ -181,9 +182,9 @@
 
 			{% endfor %}
 		</div>
-	{%endif%}
+		{%endif%}
 	
-	{%if stories%}
+		{%if stories%}
 		<h1 class="title is-3" style="text-align: center;">Recent Story</h1>
 		<div class="columns">
 			{%for story in stories%}
@@ -233,7 +234,8 @@
 
 			{% endfor %}
 		</div>
-	{%endif%}
+		{%endif%}
+	</div>
 
 	
 </section>
