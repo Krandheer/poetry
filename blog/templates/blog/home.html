@@ -155,9 +155,9 @@
 	  		
 		  					<div class="card-content">
 
-				        		<!-- <p class="title is-3" style="">{{thought.title}}</p>
+				        		<p class="title" style="">{{thought.title}}</p>
 				        		<p class="subtitle" style="font-size: 15px;">{{thought.created_on}}</p>
-				        		<p>{{thought.content|safe|slice:":200"}}</p> -->
+				        		<!-- <p>{{thought.content|safe|slice:":200"}}</p> -->
 				        		
 				        		<a href={% url 'thoughts:thoughts_detail' thought.slug %}> continue reading...</a>
 			      
@@ -208,9 +208,9 @@
 			
 	  					<div class="card-content">
 
-			        		<!-- <p class="title is-3" style="">{{story.title}}</p>
+			        		<p class="title" style="">{{story.title}}</p>
 			        		<p class="subtitle" style="font-size: 15px;">{{story.created_on}}</p>
-			        		<p>{{story.content|safe|slice:":200"}}</p> -->
+			        		<!-- <p>{{story.content|safe|slice:":200"}}</p> -->
 			        		
 			        		<a href={% url 'story:story_detail' story.slug %}> continue reading...</a>
 		      
