@@ -85,22 +85,21 @@
 		{%for post in posts%}
 			<div class="column is-one-third" style="text-align: center;">
 			
-				<div class="card box box-shadow-lift" style="height: 100%;display: flex;
-  flex-direction: column; padding: 0.8rem;">
+				<div class="card box box-shadow-lift" style="height: 100%;display: flex; flex-direction: column; padding: 0.8rem;">
   					<style >
 						.card:hover{
 							box-shadow: 1px 8px 20px grey;
 						}
   					</style>
-						{%if post.image%}
-		  					<div class="card-image">
-      							
-    							<figure class="image is-4by3">
-      								<img src="{{ post.image.url}}" alt="{{ post.title }}">
-    							</figure>
-      				
-      						</div>
-      					{%endif%}
+					{%if post.image%}
+	  					<div class="card-image">
+  							
+							<figure class="image is-4by3">
+  								<img src="{{ post.image.url}}" alt="{{ post.title }}">
+							</figure>
+  				
+  						</div>
+  					{%endif%}
 	  		
 	  				<div class="card-content">
 
@@ -145,13 +144,13 @@
 							}
 							</style>
 						{%if thought.image%}
-		  					<div class="card-image">
-      							
-    							<figure class="image is-4by3">
-      								<img src="{{ thought.image.url}}" alt="{{ post.title }}">
-    							</figure>
-      				
-      						</div>
+	  					<div class="card-image">
+  							
+							<figure class="image is-4by3">
+  								<img src="{{ thought.image.url}}" alt="{{ post.title }}">
+							</figure>
+  				
+  						</div>
       					{%endif%}
   		
 	  					<div class="card-content">
@@ -187,52 +186,52 @@
 		{%if stories%}
 		<h1 class="title is-3" style="text-align: center;">Recent Story</h1>
 		<div class="columns">
-			{%for story in stories%}
-				<div class="column is-one-third" style="text-align: center;">
+		{%for story in stories%}
+			<div class="column is-one-third" style="text-align: center;">
+	
+				<div class="card box box-shadow-lift" style="height: 100%;display: flex;
+						flex-direction: column; padding: 0.8rem;">
+						<style >
+						.card:hover{
+							box-shadow: 1px 8px 20px grey;
+						}
+						</style>
+					{%if post.image%}
+  					<div class="card-image">
+							
+						<figure class="image is-4by3">
+								<img src="{{ story.image.url}}" alt="{{ post.title }}">
+						</figure>
+				
+						</div>
+  					{%endif%}
 		
-					<div class="card box box-shadow-lift" style="height: 100%;display: flex;
-							flex-direction: column; padding: 0.8rem;">
-							<style >
-							.card:hover{
-								box-shadow: 1px 8px 20px grey;
-							}
-							</style>
-						{%if post.image%}
-		  					<div class="card-image">
-      							
-    							<figure class="image is-4by3">
-      								<img src="{{ story.image.url}}" alt="{{ post.title }}">
-    							</figure>
-      				
-      						</div>
-      					{%endif%}
-  		
-	  					<div class="card-content">
+  					<div class="card-content">
 
-			        		<p class="title is-3" style="">{{story.title}}</p>
-			        		<p class="subtitle" style="font-size: 15px;">{{story.created_on}}</p>
-			        		<p>{{story.content|safe|slice:":200"}}</p>
-			        		
-			        		<a href={% url 'story:story_detail' story.slug %}> continue reading...</a>
-		      
-		      			</div>
+		        		<p class="title is-3" style="">{{story.title}}</p>
+		        		<p class="subtitle" style="font-size: 15px;">{{story.created_on}}</p>
+		        		<p>{{story.content|safe|slice:":200"}}</p>
+		        		
+		        		<a href={% url 'story:story_detail' story.slug %}> continue reading...</a>
+	      
+	      			</div>
 
-	      				<footer class="card-footer" style="margin-top: auto">
-    						<p class="card-footer-item">
-      							<span>Share on <br> <a href="whatsapp://send?text=https://bhashadiaries.pythonanywhere.com/story/detail/{{story.slug}}/">Whatsapp</a></span>
-      						</p>
-    						<p class="card-footer-item">
-      							<span> Share on<br> <a href="https://www.facebook.com/sharer/sharer.php?u=https://bhashadiaries.pythonanywhere.com/story/detail/{{story.slug}}/" target="_blank">Facebook</a></span>
-      						</p>
-      						<p class="card-footer-item">
-	      						<span> Share on<br> <a href="https://twitter.com/intent/tweet?text=https://bhashadiaries.pythonanywhere.com/story/detail/{{story.slug}}/" target="_blank">Twitter</a></span>
-	      					</p>
-  						</footer>
+      				<footer class="card-footer" style="margin-top: auto">
+						<p class="card-footer-item">
+  							<span>Share on <br> <a href="whatsapp://send?text=https://bhashadiaries.pythonanywhere.com/story/detail/{{story.slug}}/">Whatsapp</a></span>
+  						</p>
+						<p class="card-footer-item">
+  							<span> Share on<br> <a href="https://www.facebook.com/sharer/sharer.php?u=https://bhashadiaries.pythonanywhere.com/story/detail/{{story.slug}}/" target="_blank">Facebook</a></span>
+  						</p>
+  						<p class="card-footer-item">
+      						<span> Share on<br> <a href="https://twitter.com/intent/tweet?text=https://bhashadiaries.pythonanywhere.com/story/detail/{{story.slug}}/" target="_blank">Twitter</a></span>
+      					</p>
+						</footer>
 
-  					</div>
-				</div>
+					</div>
+			</div>
 
-			{% endfor %}
+		{% endfor %}
 		</div>
 		{%endif%}
 	</div>
