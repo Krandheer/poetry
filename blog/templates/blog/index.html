@@ -2,27 +2,27 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title> bhashadiaries </title>
-	    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title> bhashadiaries </title>
+      <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
       
   </head>
 
 
-	<body class="has-navbar-fixed-top">
+  <body class="has-navbar-fixed-top">
     <!-- fb comment integration javascript sdk -->
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0">
       </script>
       
-  	<nav class="navbar is-grey is-fixed-top" role="navigation" aria-label="main navigation">
-  		<div class="navbar-brand" style="max-height: 3.5rem">
-    		<a class="navbar-item" id="brand" href="{% url 'blog:home' %}" style="font-size: 40px; font-weight: bold"><span id="b">bhasha</span><span id="d">diaries<span></a>
+    <nav class="navbar is-grey is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand" style="max-height: 3.5rem">
+        <a class="navbar-item" id="brand" href="{% url 'blog:home' %}" style="font-size: 40px; font-weight: bold"><span id="b">bhasha</span><span id="d">diaries<span></a>
           <style>
             
             #b{
@@ -36,11 +36,11 @@
               background-color: black;
 
           </style>
-    		<a role="button" class="navbar-burger burger" id="hamburger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-		      	<span aria-hidden="true"></span>
-		      	<span aria-hidden="true"></span>
-		      	<span aria-hidden="true"></span>
-  			</a>
+        <a role="button" class="navbar-burger burger" id="hamburger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
         <style>
 
 
@@ -50,31 +50,31 @@
           }
         </style>
 
-  		</div>
+      </div>
 
-			<div id="navbarBasicExample" class="navbar-menu">
-		    <div class="navbar-start">
-		      	<a class="navbar-item" id="navbar-inline" href="{% url 'blog:home' %}">Home</a>
-		      	<a class="navbar-item" id="navbar-inline" href="{% url 'blog:post_list' %}">Poems</a>
-		      	<a class="navbar-item" id="navbar-inline" href="{% url 'thoughts:thoughts_list' %}">Musings</a>
-		      	<a class="navbar-item" id="navbar-inline" href="{% url 'story:story_list' %}">Stories</a>
-		      	<a class="navbar-item" id="navbar-inline" href="{% url 'videos:video_list' %}">Videos</a>
-		      	<a class="navbar-item" id="navbar-inline" href="http://bhashadiaries.pythonanywhere.com/#about">About</a>
-		      	<a class="navbar-item" id="navbar-inline" href="{% url 'blog:contact_page' %}">Contact</a>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" id="navbar-inline" href="{% url 'blog:home' %}">Home</a>
+            <a class="navbar-item" id="navbar-inline" href="{% url 'blog:post_list' %}">Poems</a>
+            <a class="navbar-item" id="navbar-inline" href="{% url 'thoughts:thoughts_list' %}">Musings</a>
+            <a class="navbar-item" id="navbar-inline" href="{% url 'story:story_list' %}">Stories</a>
+            <a class="navbar-item" id="navbar-inline" href="{% url 'videos:video_list' %}">Videos</a>
+            <a class="navbar-item" id="navbar-inline" href="http://bhashadiaries.pythonanywhere.com/#about">About</a>
+            <a class="navbar-item" id="navbar-inline" href="{% url 'blog:contact_page' %}">Contact</a>
           <style>
             #navbar-inline:hover{
               background-color:black !important;
               color:white !important;
             }
           </style>
-		    </div>
+        </div>
 
         <div class="navbar-end">
-	      	<div class="navbar-item" id="subscribe-button">
-	        	<div class="buttons">
-          		<a class="button is-primary" id="subscribe" href="{% url 'newsletter:subscribe' %}">
-            		<strong>Subscribe</strong>
-          		</a>
+          <div class="navbar-item" id="subscribe-button">
+            <div class="buttons">
+              <a class="button is-primary" id="subscribe" href="{% url 'newsletter:subscribe' %}">
+                <strong>Subscribe</strong>
+              </a>
               <style>
                 #subscribe-button:hover{
                   background-color: black;
@@ -84,72 +84,72 @@
                   color:black;
                 }
               </style>
-          		
-	        	</div>
-	      	</div>
-			  </div>
-  		</div>
-		</nav>
-  	
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
       {%block content%}
 
       {%endblock%}
-	
-  	
+  
+    
 
 
-  	<footer class="footer" style="background-color: black; padding: 2rem 1.5rem 2rem;">
-  		<div class="container">
+    <footer class="footer" style="background-color: black; padding: 2rem 1.5rem 2rem;">
+      <div class="container">
         <hr style="height: 5px; background-color: black">
-  			<div class="columns is-mobile is-multiline is-centered">
+        <div class="columns is-mobile is-multiline is-centered">
 
-  				<div class="column is-half-mobile" style="text-align: center;">
-  					<h1 class="title is-5" style="color:white">Quick links</h1>
-  					<ul>
-  						<li><a href="{% url 'blog:home' %}">Home</a></li>
-  						<li><a href="{% url 'blog:post_list' %}">Poems</a></li>
+          <div class="column is-half-mobile" style="text-align: center;">
+            <h1 class="title is-5" style="color:white">Quick links</h1>
+            <ul>
+              <li><a href="{% url 'blog:home' %}">Home</a></li>
+              <li><a href="{% url 'blog:post_list' %}">Poems</a></li>
               <li><a href="{% url 'thoughts:thoughts_list' %}">Musings</a></li>
-  						<li><a href="{% url 'story:story_list' %}">Stories</a></li>
-  						<li><a href="{% url 'videos:video_list' %}">Videos</a></li>
-  						<li><a href="http://bhashadiaries.pythonanywhere.com/#about">About</a></li>
-  						<li> <a href="mailto:bhashadiaries@gmail.com">contact</a></li>
-  					</ul>
-	  			</div>
+              <li><a href="{% url 'story:story_list' %}">Stories</a></li>
+              <li><a href="{% url 'videos:video_list' %}">Videos</a></li>
+              <li><a href="http://bhashadiaries.pythonanywhere.com/#about">About</a></li>
+              <li> <a href="mailto:bhashadiaries@gmail.com">contact</a></li>
+            </ul>
+          </div>
 
-  				<div class="column is-half-mobile" style="text-align: center;">
-  					<h1 class="title is-5" style="color:white">
-  						Follow on
-  					</h1>
-  					<ul>
-  						<li>
-  							<a href="https://www.facebook.com/bhaskarpandey806/" target="_blank">
-  								<i class="fab fa-facebook fa-2x"></i>
-  							</a>
-  						</li>
-  						<li>
-  							<a href="https://www.instagram.com/bhasha806/" target="_blank">
-  								<i class="fab fa-instagram fa-2x"></i>
-  							</a>
-  						</li>
-  						<li>
-  							<a href="https://twitter.com/bhasha806?s=08" target="_blank">
-  								<i class="fab fa-twitter-square fa-2x"></i>
-  							</a>
-  						</li>
-  					</ul>
-  				</div>
+          <div class="column is-half-mobile" style="text-align: center;">
+            <h1 class="title is-5" style="color:white">
+              Follow on
+            </h1>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/bhaskarpandey806/" target="_blank">
+                  <i class="fab fa-facebook fa-2x"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/bhasha806/" target="_blank">
+                  <i class="fab fa-instagram fa-2x"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/bhasha806?s=08" target="_blank">
+                  <i class="fab fa-twitter-square fa-2x"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-			</div>
-			<div style="text-align: center;">
-				<h1 class="title is-5" style="color:white"> Copyright by   &copy;Bhasha 2020</h1>
+      </div>
+      <div style="text-align: center;">
+        <h1 class="title is-5" style="color:white"> Copyright by   &copy;Bhasha 2020</h1>
         <h1 class="title is-6" style="color:white">Developed by: <a href="mailto:randheer.dakshana15@gmail.com">Randheer</a></h1>
-			</div>
+      </div>
 
-		</div>
-  	</footer>
+    </div>
+    </footer>
 
 <script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
 
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
