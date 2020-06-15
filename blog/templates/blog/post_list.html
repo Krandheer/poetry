@@ -9,7 +9,7 @@
 			{% for post in posts %}
 				<div class="column is-one-third" style="text-align: center;">
 				
-					<div class="card box box-shadow-lift" style="height: 100%;display: flex; flex-direction: column; padding: 0.5rem;">
+					<div class="card box box-shadow-lift" style="height: 100%;display: flex; flex-direction: column; padding: 0.8rem;">
   						<style >
   							.card:hover{
   								box-shadow: 1px 8px 20px grey;
@@ -35,10 +35,8 @@
 
 			        		<p style="margin-top:2rem"><a href="{%url 'blog:post_detail' post.slug %}">continue reading...</a></p> 
 
-			        		<!-- <p>let user viewe number of comments here</p> -->
-
 		      			</div>
-		      			<footer class="card-footer" style="margin-top: auto">
+		      			<footer class="card-footer">
 	    					<p class="card-footer-item">
 	      						<span>Share on<br> <a href="whatsapp://send?text=https://bhashadiaries.pythonanywhere.com/blog/{{post.slug}}/">Whatsapp</a></span>
 	      					</p>
