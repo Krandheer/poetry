@@ -20,7 +20,7 @@
 			  					<p class="title is-3"><a href="{% url 'thoughts:thoughts_detail' post.slug %}">{{post.title}}</a></p> 
 
 				        		<p class="subtitle" style="font-size: 15px;">{{post.created_on}}</p>
-				        		<p>{{post.content|safe|slice:":200"}}</p>
+				        		<p>{{post.content|striptags|truncatewords:25}}</p>
 				        		<p style="margin-top:2rem"><a href="{% url 'thoughts:thoughts_detail' post.slug %}">continue reading...</a></p> 
 				      
 			      			</div>
