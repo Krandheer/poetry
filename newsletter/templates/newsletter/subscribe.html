@@ -2,10 +2,32 @@
 
 {% block content %}
 
+
 <section class="section" style="min-height: 100vh; text-align: center;">
-	<form action="{% url 'newsletter:subscribe' %}" method="post">{% csrf_token %}
+
+	<form style="padding:3px;text-align:center;" action="https://tinyletter.com/bhashadiaries" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/bhashadiaries', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+
+		<div class="field">
+				<label for="tlemail" class="title is-4">Enter your email address</label>	
+		</div>
+
+		<div class="field">
+  			<div class="control" style="text-align: center;">
+   				<input class="input" type="email" name="email" id="tlemail" placeholder="Enter your email" style="width: 60%">
+
+   				<input type="hidden" value="1" name="embed"/>
+
+   				<button class="button is-primary">Subscribe</button>
+  			</div>
+		</div>
+		
+	</form>
+
+
+
+	<!-- <form action="{% url 'newsletter:subscribe' %}" method="post">{% csrf_token %}
 		{{ form.as_p }}
 	<button type="submit">Submit</button>
-</form>
+</form> -->
 </section>
 {% endblock %}
