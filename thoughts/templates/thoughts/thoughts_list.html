@@ -17,11 +17,13 @@
 			  		
 			  				<div class="card-content">
 
-			  					<p class="title is-3"><a href="{% url 'thoughts:thoughts_detail' post.slug %}">{{post.title}}</a></p> 
+			  					<p class="title"><a href="{% url 'thoughts:thoughts_detail' post.slug %}">{{post.title}}</a></p> 
 
 				        		<p class="subtitle" style="font-size: 15px;">{{post.created_on}}</p>
+
 				        		<p>{{post.content|striptags|truncatewords:25}}</p>
-				        		<p style="margin-top:2rem"><a href="{% url 'thoughts:thoughts_detail' post.slug %}">continue reading...</a></p> 
+
+				        		<a href="{% url 'thoughts:thoughts_detail' post.slug %}">continue reading...</a> 
 				      
 			      			</div>
 			      			<footer class="card-footer" style="margin-top: auto">
