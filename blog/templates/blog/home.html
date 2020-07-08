@@ -104,7 +104,10 @@
 
 <section class="section" id="recent-articles" style="background-color: rgb(244,248,252);">
 	<div class="container">
-		<h1 class="title is-3" style="text-align: center;">Recent Poems</h1>
+		<h1 class="title is-3" style="text-align: center;">
+			Recent Poems 
+			<a href="{% url 'blog:post_list' %}">({{total_poems}})</a>
+		</h1>
 		<div class="columns">
 		{%for post in posts%}
 			<div class="column is-one-third" style="text-align: center;">
@@ -156,7 +159,10 @@
 		</div>
 
 		{%if thoughts%}
-			<h1 class="title is-3" style="text-align: center;">Recent Musings</h1>
+			<h1 class="title is-3" style="text-align: center;">
+				Recent Musings
+				<a href="{% url 'thoughts:thoughts_list' %}">({{total_thoughts}})</a>
+			</h1>
 			<div class="columns">
 				{%for thought in thoughts%}
 					<div class="column is-one-third" style="text-align: center;">
@@ -209,7 +215,11 @@
 		{%endif%}
 	
 		{%if stories%}
-			<h1 class="title is-3" style="text-align: center;">Recent Story</h1>
+			<h1 class="title is-3" style="text-align: center;">
+				Recent Story
+				<a href="{% url 'story:story_list' %}">({{total_story}})</a>
+
+			</h1>
 			<div class="columns">
 			{%for story in stories%}
 				<div class="column is-one-third" style="text-align: center;">

@@ -8,6 +8,9 @@ from story.models import Story
 from thoughts.models import Thoughts
 
 def home(request):
+	total_poems = Post.objects.all().count()
+	total_story = Story.objects.all().count()
+	total_thoughts = Thoughts.objects.all().count()
 	posts = Post.objects.filter(status=1).order_by('-created_on')[:3]
 	story = Story.objects.filter(status=1).order_by('-created_on')[:3]
 	thoughts = Thoughts.objects.filter(status=1).order_by('-created_on')[:3]
@@ -15,7 +18,10 @@ def home(request):
 				template_name='blog/home.html',
 				context= {'posts': posts,
 							'stories': story,
-							'thoughts': thoughts})
+							'thoughts': thoughts,
+							'total_poems':total_poems,
+							'total_story':total_story,
+							'total_thoughts':total_thoughts})
 	#I can use model from different aap here
 	#and use them in home.html template
 	#to show the home page list from different model
