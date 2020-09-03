@@ -22,6 +22,7 @@
 				        		<p class="subtitle" style="font-size: 15px;">{{post.created_on}}</p>
 
 				        		<p>{{post.content|striptags|truncatewords:25}}</p>
+				        		
 
 				        		<a href="{% url 'thoughts:thoughts_detail' post.slug %}">continue reading...</a> 
 				      
