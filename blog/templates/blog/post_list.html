@@ -32,7 +32,7 @@
 				        		<p class="subtitle" style="font-size: 15px;">{{post.created_on}}</p>
 
 
-				        		<p>{{post.content|safe|linebreaks|truncatewords:25}}</p>
+				        		<p>{{post.content|safe|striptags|truncatewords:25}}</p>
 				        		<!-- {{post.content|safe|linebreaks|truncatewords:80}}  -->
 
 				        		<a href="{%url 'blog:post_detail' post.slug %}">continue reading...</a> 
